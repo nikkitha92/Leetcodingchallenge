@@ -1,0 +1,18 @@
+'''
+Input: num = 5
+Output: 2
+Explanation: The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.
+'''
+
+
+
+class Solution(object):
+    def findComplement(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        num=bin(num)[2:]
+        flip={'1':'0','0':'1'}
+        result = ''.join(flip[b] for b in num)
+        return int(result,2)
