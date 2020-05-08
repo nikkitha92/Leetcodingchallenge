@@ -1,0 +1,23 @@
+'''
+Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+Examples:
+s = "leetcode"
+return 0.
+s = "loveleetcode",
+return 2.
+'''
+
+class Solution(object):
+    def firstUniqChar(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        from collections import Counter
+        result=Counter(s)
+
+        for key,val in result.items():
+            if val==1:
+                final = s.index(key)
+                break
+        return final
