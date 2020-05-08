@@ -1,0 +1,28 @@
+'''
+Check If It Is a Straight Line
+You are given an array coordinates, coordinates[i] = [x, y], where [x, y] represents the coordinate of a point. 
+Check if these points make a straight line in the XY plane.
+Input: coordinates = [[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]]
+Output: true
+'''
+
+
+
+class Solution(object):
+    def checkStraightLine(self, coordinates):
+        """
+        :type coordinates: List[List[int]]
+        :rtype: bool
+        """
+        result =[]
+
+        for i in range(len(coordinates)-1):
+            try:        
+                result.append((coordinates[i+1][1]-coordinates[i][1])/(coordinates[i+1][0]-coordinates[i][0]))
+                
+            except ZeroDivisionError:
+                return False
+            
+        if len(set(result))==1:
+            return True
+      
