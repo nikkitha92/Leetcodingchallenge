@@ -1,0 +1,15 @@
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        """
+        :type ransomNote: str
+        :type magazine: str
+        :rtype: bool
+        """
+        for i in ransomNote:
+            if i in magazine:
+            #here 1 represents the number of terms to be replaced
+                magazine= magazine.replace(i,"",1)
+            
+            else:
+                return False
+        return True
